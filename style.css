@@ -38,18 +38,21 @@
   width: 20%;
   height: 400px;
   background-color: blueviolet;
-  float: left;
+  display: inline-block;
+  /* float: left; */
 }
 .main-content {
   width: 80%;
   height: 400px;
   background-color: chocolate;
-  float: left;
+  display: inline-block;
+  /* float: left; */
 }
 
 .footer {
   width: 100%;
   height: 100px;
   background-color: gray;
-  clear: both;
+
+  /* clear: both; */
 }
