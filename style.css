@@ -1,0 +1,147 @@
+.container {
+  width: 800px;
+  height: 200px;
+}
+
+.left-menu {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+
+.user {
+  width: 100%;
+  float: left;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 100%;
+  float: left;
+}
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-data {
+  width: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  float: left;
+}
+
+.user-data p {
+  margin: 0px;
+}
+
+.name {
+  font-size: 14px;
+  color: #555555;
+}
+
+.time {
+  font-size: 10px;
+  color: #999;
+}
+
+.content-text {
+  padding-top: 10px;
+  height: 100%;
+  clear: both;
+}
+
+.content-title {
+  font-size: 18px;
+}
+
+.cotent-body {
+  font-size: 14px;
+  color: #555555;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+}
+
+.icon-box {
+  width: 100%;
+  height: 100%;
+}
+
+.empty-box {
+  width: 95%;
+  height: 100%;
+  float: left;
+}
+
+.icon {
+  width: 5%;
+  float: left;
+}
+
+.right-menu {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  float: left;
+}
+
+.plus-photo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+  background-color: #555555;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.navbar a {
+  font-size: 16px;
+}
+
+/* layout2 */
+.main-background {
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./img_choigosim_001.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 1px;
+  text-align: center;
+  color: white;
+}
+
+.main-background h2 {
+  font-size: 40px;
+  margin-top: 15%;
+  margin-bottom: 0px;
+}
+
+.main-background p {
+  margin-bottom: 50px;
+}
+
+.main-background a {
+  color: black;
+  padding: 20px 25px;
+  border-radius: 10px;
+  background-color: white;
+  text-decoration: none;
+}
+
+.main-background a:visited {
+  text-decoration: none;
+}
