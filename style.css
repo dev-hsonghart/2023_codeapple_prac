@@ -158,17 +158,12 @@ body {
 
 .sub-content {
   position: relative;
-  width: 100%;
-}
-
-.sub-txt {
-  width: 800px;
+  width: 80%;
+  max-width: 1024px;
   background-color: #eee;
   padding: 30px 40px;
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: -50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
 }
