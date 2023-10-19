@@ -145,3 +145,9 @@
 .main-background a:visited {
   text-decoration: none;
 }
+
+.main-background a:hover {
+  text-decoration: none;
+  background-color: coral;
+  color: white;
+}
