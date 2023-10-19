@@ -17,4 +17,9 @@
 
 .content {
   text-align: center;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 5px 5px black;
 }
