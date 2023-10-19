@@ -106,3 +106,7 @@
   height: 100%;
   object-fit: fill;
 }
+
+.navbar a {
+  font-size: 16px;
+}
