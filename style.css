@@ -371,3 +371,44 @@ textarea {
 .nav-menu p {
   padding-left: 20px;
 }
+
+/* 반응형 */
+
+.layout-body {
+  background-color: #c9c9c9;
+}
+.layout-container,
+.layout-contents {
+  display: flex;
+  width: 100%;
+}
+
+.laydout-content {
+  width: 100%;
+  background-color: white;
+  padding: 40px 50px;
+  text-align: center;
+}
+.laydout-content p:last-child {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 14px;
+}
+
+/* layout3 반응형 */
+/* 태블릿 사이즈 */
+@media screen and (max-width: 1200px) {
+  .layout-contents {
+    flex-wrap: wrap;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .layout-contents,
+  .layout-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
