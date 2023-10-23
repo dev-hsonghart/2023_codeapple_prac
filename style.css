@@ -11,10 +11,28 @@ div,
 input,
 button,
 textarea,
-form {
+form,
+table {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 /* content css */
@@ -250,3 +268,77 @@ textarea {
 }
 
 /* cart */
+.cart-body {
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.cart-table {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.cart-table tr {
+  border-bottom: cornflowerblue solid 1px;
+}
+
+.cart-table > tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+.cart-table td {
+  padding: 20px 15px;
+}
+
+.cart-table-title {
+  height: 50px;
+}
+
+.cart-product-thumbnail {
+  width: 100px;
+  overflow: hidden;
+}
+
+.cart-product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-product-amount,
+.cart-product-price,
+.cart-product-total {
+  text-align: right;
+}
+
+.cart-product-totalPrice {
+  font-size: 18px;
+  text-align: right;
+}
+
+.cart-bottom-btns {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.cart-edit-cart {
+  font-size: 16px;
+  text-decoration: underline;
+  float: left;
+  color: #555555;
+}
+
+.cart-btn-pay {
+  float: right;
+  padding: 10px 20px;
+  background-color: blue;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  color: white;
+}

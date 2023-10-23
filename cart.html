@@ -6,5 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
   </head>
-  <body></body>
+  <body class="cart-body">
+    <div class="cart-background">
+      <h1>Your shopping cart</h1>
+      <table class="cart-table">
+        <thead>
+          <tr class="cart-table-title">
+            <td></td>
+            <td>ITEM</td>
+            <td>AMOUNT</td>
+            <td>PRICE</td>
+            <td>TOTAL</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cart-product-thumbnail">
+              <img src="/img_choigosim_001.jpeg" alt="아이템 이미지" />
+            </td>
+            <td class="cart-product-item">
+              <p>최고심</p>
+              <p>최고심 한정판 카드</p>
+            </td>
+            <td class="cart-product-amount">1</td>
+            <td class="cart-product-price">3,000원</td>
+            <td class="cart-product-total">3,000원</td>
+          </tr>
+          <tr>
+            <!-- 셀 합치기 -->
+            <td colspan="5" class="cart-product-totalPrice">
+              <strong>15,000원</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cart-bottom-btns">
+        <a class="cart-edit-cart" href="#">Edit your shopping cart</a>
+        <button class="cart-btn-pay" type="button">
+          Choose payment method
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
