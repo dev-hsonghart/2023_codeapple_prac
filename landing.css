@@ -74,8 +74,15 @@ section {
     rgba(45, 161, 253, 1) 100%
   );
   color: white;
-  justify-content: space-between;
+  justify-content: center;
   padding-bottom: 0px;
+}
+
+.intro-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .intro-text {
@@ -130,6 +137,7 @@ section {
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 1200px;
 }
 
 .service-column {
@@ -277,7 +285,7 @@ footer p {
 
 /* 모바일 */
 @media screen and (max-width: 768px) {
-  .intro {
+  .intro-container {
     flex-direction: column;
     align-items: center;
   }
