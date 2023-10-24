@@ -406,6 +406,50 @@ textarea {
   margin-bottom: 25px;
 }
 
+/* animation 실습 */
+.product-container {
+  display: flex;
+  background-color: #eee;
+  width: 100%;
+  padding: 40px;
+}
+
+.product-item {
+  width: 33%;
+  margin-right: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.product-item:last-child {
+  margin: 0px;
+}
+
+.product-item-overlay {
+  position: absolute;
+  bottom: -86px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
+  color: white;
+  /* animation */
+  transition: all 0.5s ease-in-out;
+}
+
+.product-item-overlay p:first-child {
+  font-size: 30px;
+}
+
+/* 애니메이션 */
+
+.product-item:hover .product-item-overlay {
+  bottom: 0px;
+}
+
+.product-item img {
+  width: 100%;
+  display: block;
+}
+
 /* layout3 반응형 */
 /* 태블릿 사이즈 */
 @media screen and (max-width: 1200px) {
