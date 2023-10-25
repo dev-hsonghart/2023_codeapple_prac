@@ -1,0 +1,161 @@
+/* reset css */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+div,
+input,
+button,
+textarea,
+form,
+table {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+  padding-left: 0px;
+}
+
+/* varialbe */
+:root {
+  --skyblue: rgb(47, 167, 231);
+  --bg-gray: #f7f9fc;
+  /* font */
+  --sub-title: 16px;
+  --body: 12px;
+  --md-body: 14px;
+  --title: 18px;
+}
+
+/* style css */
+
+body {
+  background-color: var(--bg-gray);
+}
+
+.profile-card-info p:nth-child(2) {
+  font-size: var(--body);
+}
+
+.profile-card-info-locate {
+  font-size: var(--body);
+  color: var(--skyblue);
+}
+
+.profile-card button,
+.signUp button {
+  background-color: var(--skyblue);
+  border: none;
+  font-size: var(--body);
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: gainsboro;
+  content: " ";
+}
+
+.profile-info {
+  font-size: var(--sub-title);
+}
+
+.profile-tab {
+  color: var(--skyblue);
+  text-align: center;
+}
+
+.profile-tab-current {
+  border-bottom: 2px var(--skyblue) solid;
+}
+
+.profile-works p {
+  font-size: var(--sub-title);
+}
+
+.profile-works li,
+.profile-about-info p:nth-child(2) {
+  font-size: var(--body);
+}
+
+.profile-about-divider {
+  width: 100%;
+  height: 1px;
+  background-color: gainsboro;
+}
+
+.profile-skill {
+  background-color: white;
+  border: gainsboro 1px solid;
+  color: #212529;
+  font-size: var(--body);
+}
+
+.signUp i {
+  font-size: 56px;
+  color: var(--skyblue);
+}
+
+.signUp p {
+  font-size: var(--body);
+}
+
+.signUp-alreay a {
+  color: var(--skyblue);
+  font-size: var(--body);
+}
+
+.your-might-people > p {
+  font-size: var(--body);
+}
+
+.your-might-people .profile-photo {
+  width: 48px;
+  height: 48px;
+}
+
+.people-profile p:first-child {
+  font-size: var(--md-body);
+  line-height: 1;
+}
+
+.people-profile p:not(:first-child) {
+  font-size: var(--body);
+}
+
+.people-profile p:last-of-type {
+  color: var(--skyblue);
+}
