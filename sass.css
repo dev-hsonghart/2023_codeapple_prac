@@ -1,1 +1,17 @@
-/*# sourceMappingURL=sass.css.map */
+.box-red, .box-green, .box-blue {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.box-blue {
+  background-color: blue;
+}
+
+.box-green {
+  background-color: green;
+}
+
+.box-red {
+  background-color: red;
+}/*# sourceMappingURL=sass.css.map */
