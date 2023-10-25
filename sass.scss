@@ -28,7 +28,7 @@
     padding: 20px;
     border: 1px gainsboro solid;
   }
-  .active {
+  .list:hover {
     background-color: blue;
     color: white;
     border: none;
@@ -70,16 +70,15 @@
 .row {
   width: 100%;
   display: flex;
-}
+  .col-6 {
+    @include col(50%);
+  }
 
-.col-6 {
-  @include col(50%);
-}
+  .col-4 {
+    @include col(33.33%);
+  }
 
-.col-4 {
-  @include col(33.33%);
-}
-
-.col-3 {
-  @include col(25%);
+  .col-3 {
+    @include col(25%);
+  }
 }

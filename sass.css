@@ -153,7 +153,7 @@ table {
   padding: 20px;
   border: 1px gainsboro solid;
 }
-.lists .active {
+.lists .list:hover {
   background-color: blue;
   color: white;
   border: none;
@@ -187,8 +187,7 @@ table {
   width: 100%;
   display: flex;
 }
-
-.col-6 {
+.row .col-6 {
   padding: 20px 12px;
   font-size: 16px;
   background-color: cornsilk;
@@ -196,8 +195,7 @@ table {
   margin-bottom: 20px;
   width: 50%;
 }
-
-.col-4 {
+.row .col-4 {
   padding: 20px 12px;
   font-size: 16px;
   background-color: cornsilk;
@@ -205,8 +203,7 @@ table {
   margin-bottom: 20px;
   width: 33.33%;
 }
-
-.col-3 {
+.row .col-3 {
   padding: 20px 12px;
   font-size: 16px;
   background-color: cornsilk;
