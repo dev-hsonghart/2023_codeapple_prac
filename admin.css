@@ -137,11 +137,9 @@ body {
   background: #eeeeee;
 }
 
-.main {
-  display: flex;
-}
 .main .main-contents {
   width: 100%;
+  padding-left: 40px;
 }
 
 nav {
@@ -153,6 +151,8 @@ nav {
   font-weight: 200;
   margin-left: -78px;
   transition: all 0.3s ease-in;
+  position: fixed;
+  z-index: 4;
 }
 
 nav:hover {
