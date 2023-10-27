@@ -9,11 +9,15 @@
   <body>
     <div class="alert-box" id="alert">
       <p class="alert-content"></p>
-      <button type="button" onclick="openAlert('none',' ')">닫기</button>
+      <button id="close">닫기</button>
     </div>
     <button onclick="openAlert('block','아이디입력하세요')">아이디</button>
     <button onclick="openAlert('block','비번입력하세요')">비밀번호</button>
     <script>
+      document.getElementById("close").addEventListener("click", function () {
+        document.querySelector(".alert-box").style.display = "none";
+      });
+
       function openAlert(status, text) {
         document.querySelector(".alert-box").style.display = status;
         document.querySelector(".alert-content").innerHTML = text;
