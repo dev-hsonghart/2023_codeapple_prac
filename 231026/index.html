@@ -8,16 +8,15 @@
   </head>
   <body>
     <div class="alert-box" id="alert">
-      알림창입니다.
-      <button type="button" onclick="closeAlert()">닫기</button>
+      <p class="alert-content"></p>
+      <button type="button" onclick="openAlert('none',' ')">닫기</button>
     </div>
-    <button onclick="openAlert()">버튼</button>
+    <button onclick="openAlert('block','아이디입력하세요')">아이디</button>
+    <button onclick="openAlert('block','비번입력하세요')">비밀번호</button>
     <script>
-      function closeAlert() {
-        document.querySelector(".alert-box").style.display = "none";
-      }
-      function openAlert() {
-        document.querySelector(".alert-box").style.display = "block";
+      function openAlert(status, text) {
+        document.querySelector(".alert-box").style.display = status;
+        document.querySelector(".alert-content").innerHTML = text;
       }
     </script>
   </body>
