@@ -1,0 +1,11 @@
+.alert-box {
+  padding: 12px 24px;
+  background-color: aliceblue;
+  color: purple;
+  border-radius: 5px;
+  display: none;
+}
+
+.visible {
+  display: block;
+}

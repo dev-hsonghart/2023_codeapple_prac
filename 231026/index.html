@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1 id="hello">안녕하세요</h1>
-    <h1 id="hi">JS 초보에요</h1>
-    <script>
-      document.getElementById("hello").innerHTML = "안녕";
-      document.getElementById("hi").innerHTML = "JS 고수에요";
-      // document.getElementById("hi").style.fontSize = "16px";
-      var test = document.querySelectorAll("h1");
-      for (let i = 0; i < test.length; i++) {
-        test[i].style.fontSize = "16px";
-      }
-    </script>
+    <div class="alert-box" id="alert">
+      알림창입니다.
+      <button
+        type="button"
+        onclick="document.querySelector('.alert-box').style.display ='none'"
+      >
+        닫기
+      </button>
+    </div>
+    <button
+      onclick="document.querySelector('.alert-box').style.display='block'"
+    >
+      버튼
+    </button>
+    <script></script>
   </body>
 </html>
