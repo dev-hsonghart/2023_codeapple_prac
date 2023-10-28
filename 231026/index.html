@@ -72,13 +72,50 @@
     </button>
 
     <button class="coffee">커피 더 줘요</button>
+
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer" />
+    <button id="send-answer">제출</button>
+
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+
     <script>
+      // <!-- 맞추면 성공 , 3번 제출 횟수 안에 못맞추면 멍충이 -->
+      const sendBtn = $("#send-answer");
+      let sendCount = 0;
+
+      // 클릭할 때 정답 여부 확인
+      function checkAnswer() {
+        let answer = $("#answer").val();
+        if (answer == 1335) {
+          alert("성공");
+          console.log(sendCount);
+        } else {
+          alert("몽총이");
+          console.log(sendCount);
+        }
+        checkCount();
+      }
+
+      function checkCount() {
+        sendCount += 1;
+      }
+
+      function init() {
+        if (sendCount > 1) {
+          alert("끝까지 못맞췄네, 몽총이. 답은 1335");
+        } else {
+          checkAnswer();
+        }
+      }
+
+      sendBtn.on("click", init);
+      //
       document
         .querySelector(".nav-item")
         .addEventListener("click", function () {
