@@ -66,6 +66,10 @@
     </div>
 
     <button class="modal-btn">로그인</button>
+
+    <button class="btn-mode">
+      <span class="mode-text">Dark 🔄</span>
+    </button>
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -169,6 +173,26 @@
           }
         }
       }
+
+      // 버튼 누릇 횟수에 따라 html 변경하기
+
+      // 버튼 기본값은 "Dark"
+
+      let count = 0;
+      const btnMode = $(".btn-mode");
+
+      btnMode.on("click", function () {
+        count++;
+        // 버튼 누른 횟수가 홀수면 버튼 내부 글자를 "light"로 변경하기
+
+        if (count % 2 == 1) {
+          btnMode.text("Light 🔄");
+        } else {
+          btnMode.text("Dark 🔄");
+        }
+
+        // 누른 횟수가 짝수면 버튼 내부 글자를 "Dark"로 변경하기
+      });
 
       // document.getElementById("close").addEventListener("click", function () {
       //   document.querySelector(".alert-box").style.display = "none";
