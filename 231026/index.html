@@ -50,7 +50,18 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit">
+            전송
+          </button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
       </div>
     </div>
 
@@ -73,8 +84,17 @@
       };
 
       $(".modal-btn").on("click", controlAlert);
-
       $("#close").on("click", controlAlert);
+
+      // 입력칸이 빈칸일 때 alert()팝업 띄우기
+      const inputValue = $(".form-control").html();
+
+      $("#submit").on("click", function () {
+        if (inputValue == "") {
+          alert("빈칸을 입력하세요");
+        }
+      });
+
       // document.getElementById("close").addEventListener("click", function () {
       //   document.querySelector(".alert-box").style.display = "none";
       // });
