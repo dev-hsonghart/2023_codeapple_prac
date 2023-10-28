@@ -70,6 +70,8 @@
     <button class="btn-mode">
       <span class="mode-text">Dark 🔄</span>
     </button>
+
+    <button class="coffee">커피 더 줘요</button>
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -194,6 +196,68 @@
         // 누른 횟수가 짝수면 버튼 내부 글자를 "Dark"로 변경하기
       });
 
+      // 변수 할당
+      let age = 30;
+      const locate = "금천구";
+
+      // 이자율 계산하기
+      // 첫 예금액이 5만원 미만이면 연이율 15퍼센트,
+      // 첫 예금액이 5만원 이상이면 연이율 20퍼센트
+      // 그러면 민준이의 예금액을 6만원이라고 했을 때, 2년 후의 예금액은 얼마일까?
+
+      let money = 60000;
+
+      // 예금액에 따른 조건부 이율 적용
+      function future(cost) {
+        if (cost < 50000) {
+          const iza15 = cost * 1.15 * 1.15;
+          return iza15;
+        } else {
+          const iza20 = cost * 1.2 * 1.2;
+          return iza20;
+        }
+      }
+
+      const future_money = future(money);
+      console.log(future_money);
+
+      // 방금 마신 커피의 3분의 2만큼만 총 2번 리필해주는 카페
+      // 그러면 처음 주문한 커피 양에 따라 최대한 마실 수 있는 커피 총량은?
+
+      let coffeCount = 0;
+      let firstCoffee = 360;
+
+      const refillBtn = $(".coffee");
+      // 커피 리필 횟수 세는 함수
+      function countRefill() {
+        coffeCount++;
+        console.log(coffeCount);
+      }
+
+      // 커피 리필해주는 함수
+      function setRefiile(coffee) {
+        countRefill();
+        if (coffeCount < 3) {
+          return (coffee / 3) * 2;
+        } else {
+          return false;
+        }
+      }
+
+      // 총 마신 커피 양을 구하는 함수
+      function totalCoffee() {
+        const secondCoffee = setRefiile(firstCoffee);
+        const thirdCoffee = setRefiile(secondCoffee);
+
+        const total = firstCoffee + secondCoffee + thirdCoffee;
+        if (coffeCount > 2) {
+          alert("이제 리필 안댐");
+        } else {
+          console.log(`커피 총 ${total} 마심`);
+        }
+      }
+
+      refillBtn.on("click", totalCoffee);
       // document.getElementById("close").addEventListener("click", function () {
       //   document.querySelector(".alert-box").style.display = "none";
       // });
