@@ -115,6 +115,15 @@
       }
 
       sendBtn.on("click", init);
+
+      // 응용문제1. 1.2를 10번 곱하기 (거듭제곱)
+      function 거듭제곱(num, count) {
+        const result = num ** count;
+        console.log(result);
+      }
+
+      거듭제곱(1.2, 10);
+
       //
       document
         .querySelector(".nav-item")
@@ -295,6 +304,13 @@
       }
 
       refillBtn.on("click", totalCoffee);
+
+      // 응용문제2. 커피리필 문제에서 커피리필을 무한으로 해준다면, 처음 담아준 커피가 360일 때 총 몇 ml의 커피를 마실 수 있을까?
+      // 무한등비수열 = a/(1-r)
+
+      const infiniteCoffee = firstCoffee / (1 - 2 / 3);
+      console.log(infiniteCoffee);
+
       // document.getElementById("close").addEventListener("click", function () {
       //   document.querySelector(".alert-box").style.display = "none";
       // });
