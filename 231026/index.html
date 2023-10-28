@@ -101,6 +101,75 @@
         }
       });
 
+      // if/else, function 과제
+      // 01. 3의 배수에서 박수치게 만드는 함수 만들기
+
+      function 삼육구게임(number) {
+        if (number % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      // 02. 삼육구게임에서 9의 배수일 때는 박수 두번이 나오는 규칙을 추가
+
+      function 삼육구게임(number) {
+        if (number % 9 == 0) {
+          console.log("박수두번");
+        } else if (number % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      // 03. 2개의 시험 점수를 입력하면 합/불 여부 알려주는 함수
+
+      function 합격했냐(a, b) {
+        // 총점이 120 이상이면 합격
+        if (a + b >= 120) {
+          console.log("합격목걸이");
+        } else if (a < 40 || b < 40) {
+          console.log("같이 가지 못합니다");
+        } else {
+          console.log("같이 가지 못합니다");
+        }
+        // a, b 둘 중 하나가 40점 미만이면 불합격
+        // a, b 총점이 120 미만이면 불합격
+      }
+
+      // 04. 삼육구게임에서 숫자의 마지막 자리가 3, 6, 9 일 때만 박수치기
+      function 삼육구2(numb) {
+        const str = numb.toString();
+        // 입력한 숫자를 문자열로 바꾸고
+        const last = Number(str.charAt(str.length - 1));
+        // 마지막 문자를 반환하고
+        if (last == 3 || last == 6 || last == 9) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+        // 다시 숫자로 바꾸고
+        // 3, 6, 9 일 때만 박수치게 하기
+      }
+
+      // 05. 3번 문제의 합격판독 함수에서 0에서 100사이 숫자가 아닌 걸 입력하면 alert을 띄우는 기능 추가
+
+      function 합격했냐(a, b) {
+        if (a > 100 && b > 100) {
+          alert("점수를 제대로 입력");
+        } else {
+          if (a + b >= 120) {
+            console.log("합격목걸이");
+          } else if (a < 40 || b < 40) {
+            console.log("같이 가지 못합니다");
+          } else {
+            console.log("같이 가지 못합니다");
+          }
+        }
+      }
+
       // document.getElementById("close").addEventListener("click", function () {
       //   document.querySelector(".alert-box").style.display = "none";
       // });
