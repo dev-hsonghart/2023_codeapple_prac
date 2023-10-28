@@ -50,12 +50,12 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <form action="success.html">
+        <form action="">
           <div class="my-3">
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="email" />
           </div>
           <div class="my-3">
-            <input type="password" class="form-control" />
+            <input type="password" class="form-control" id="pw" />
           </div>
           <button type="submit" class="btn btn-primary" id="submit">
             전송
@@ -87,11 +87,17 @@
       $("#close").on("click", controlAlert);
 
       // 입력칸이 빈칸일 때 alert()팝업 띄우기
-      const inputValue = $(".form-control").html();
 
-      $("#submit").on("click", function () {
+      $("#submit").on("click", function (e) {
+        let inputValue = $("#email").val();
+        let password = $("#pw").val();
+
         if (inputValue == "") {
-          alert("빈칸을 입력하세요");
+          alert("이메일을 입력하세요");
+        } else if (password == "") {
+          alert("비밀번호를 입력하세요");
+        } else if (password.length < 6) {
+          alert("비밀번호를 6자 이상 입력하세요");
         }
       });
 
