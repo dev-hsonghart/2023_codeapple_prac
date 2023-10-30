@@ -24,3 +24,21 @@
 .show {
   display: block;
 }
+
+/* 캐러셀 */
+
+.slide-container {
+  width: 300vw;
+  height: 300px;
+  transition: all 1s;
+}
+
+.slide-box {
+  width: 100vw;
+
+  float: left;
+}
+
+.slide-box img {
+  width: 100%;
+}

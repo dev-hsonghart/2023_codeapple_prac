@@ -81,6 +81,21 @@
       <span class="alert-time">5</span>초 이내 구매시 사은품 증정!
     </div>
 
+    <div class="slide-container">
+      <div class="slide-box">
+        <img src="../img/img_choigosim_001.jpeg" />
+      </div>
+      <div class="slide-box">
+        <img src="../img/img_choigosim_002.jpeg" />
+      </div>
+      <div class="slide-box">
+        <img src="../img/img_choigosim_004.jpeg" />
+      </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -89,6 +104,24 @@
     ></script>
 
     <script>
+      // 캐러셀
+      $(".slide-1").on("click", slide);
+      $(".slide-2").on("click", slide);
+      $(".slide-3").on("click", slide);
+
+      function slide(e) {
+        const currentBtn = e.target.innerText;
+
+        if (currentBtn > 1) {
+          if (currentBtn == 2) {
+            $(".slide-container").css("transform", "translateX(-100vw)");
+          } else {
+            $(".slide-container").css("transform", "translateX(-200vw)");
+          }
+        } else {
+          $(".slide-container").css("transform", "");
+        }
+      }
       // <!-- 맞추면 성공 , 3번 제출 횟수 안에 못맞추면 멍충이 -->
       const sendBtn = $("#send-answer");
       let sendCount = 0;
