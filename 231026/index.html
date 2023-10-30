@@ -77,6 +77,10 @@
     <input type="text" id="answer" />
     <button id="send-answer">제출</button>
 
+    <div class="alert alert-danger">
+      <span class="alert-time">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -319,6 +323,29 @@
       //   document.querySelector(".alert-box").style.display = status;
       //   document.querySelector(".alert-content").innerHTML = text;
       // }
+
+      // setTimeout() : n초 후 함수 실행
+
+      setTimeout(function () {}, 5000);
+
+      // seetInterval() : n초마다 함수 실행
+
+      setInterval(function () {}, 1000);
+
+      // 1초마다 5라는 문자를 1씩 감소시킨다. 0이 되면 <div>를 안보이게 처리한다.
+
+      function downNumber() {
+        let alertTime = $(".alert-time").text();
+        if (alertTime > 1) {
+          const currentTime = alertTime - 1;
+          $(".alert-time").text(currentTime);
+        } else {
+          $(".alert").hide();
+          clearTimeout(timer);
+        }
+      }
+
+      let timer = setInterval(downNumber, 1000);
     </script>
     <!-- 부트스트랩 -->
     <script
