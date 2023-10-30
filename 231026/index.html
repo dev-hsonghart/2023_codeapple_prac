@@ -148,13 +148,18 @@
         let inputValue = $("#email").val();
         let password = $("#pw").val();
 
+        const regex = /[A-Z]/;
+
         if (inputValue == "") {
           alert("이메일을 입력하세요");
         } else if (password == "") {
           alert("비밀번호를 입력하세요");
         } else if (password.length < 6) {
           alert("비밀번호를 6자 이상 입력하세요");
+        } else if (regex.test(inputValue) == false) {
+          alert("비밀번호에 대문자 1개를 넣으세요");
         }
+        e.preventDefault;
       });
 
       // if/else, function 과제
