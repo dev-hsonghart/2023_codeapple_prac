@@ -91,11 +91,17 @@
       <div class="slide-box">
         <img src="../img/img_choigosim_004.jpeg" />
       </div>
+      <div class="slide-box">
+        <img src="../img/img_choigosim_005.jpeg" />
+      </div>
     </div>
 
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
+    <button class="slide-4">4</button>
+    <button class="prev">이전</button>
+    <button class="next">다음</button>
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -108,20 +114,59 @@
       $(".slide-1").on("click", slide);
       $(".slide-2").on("click", slide);
       $(".slide-3").on("click", slide);
+      $(".slide-4").on("click", slide);
+      $(".prev").on("click", slidePrev);
+      $(".next").on("click", slideNext);
+
+      let currentImg = 1;
 
       function slide(e) {
         const currentBtn = e.target.innerText;
 
-        if (currentBtn > 1) {
-          if (currentBtn == 2) {
-            $(".slide-container").css("transform", "translateX(-100vw)");
-          } else {
-            $(".slide-container").css("transform", "translateX(-200vw)");
-          }
-        } else {
+        if (currentBtn == 1) {
           $(".slide-container").css("transform", "");
+          currentImg = 1;
+        } else {
+          $(".slide-container").css(
+            "transform",
+            `translateX(-${currentImg}00vw)`
+          );
+          currentImg++;
         }
       }
+
+      const slideMoveNext = () => {
+        $(".slide-container").css(
+          "transform",
+          `translateX(-${currentImg}00vw)`
+        );
+      };
+      const slideMovePrev = () => {
+        $(".slide-container").css(
+          "transform",
+          `translateX(-${currentImg - 1}00vw)`
+        );
+      };
+      function slideNext() {
+        if (currentImg > 3) {
+          $(".slide-container").css("transform", "");
+          currentImg = 1;
+        } else {
+          slideMoveNext();
+          currentImg++;
+        }
+      }
+
+      function slidePrev() {
+        if (currentImg == 1) {
+          currentImg = 4;
+          slideMovePrev();
+        } else {
+          currentImg--;
+          slideMovePrev();
+        }
+      }
+
       // <!-- 맞추면 성공 , 3번 제출 횟수 안에 못맞추면 멍충이 -->
       const sendBtn = $("#send-answer");
       let sendCount = 0;

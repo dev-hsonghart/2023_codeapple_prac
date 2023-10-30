@@ -28,7 +28,7 @@
 /* 캐러셀 */
 
 .slide-container {
-  width: 300vw;
+  width: 400vw;
   height: 300px;
   transition: all 1s;
 }
