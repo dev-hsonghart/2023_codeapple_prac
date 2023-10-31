@@ -110,6 +110,27 @@
     ></script>
 
     <script>
+      // 함수에 분과 초를 차례로 파미로 입력하면 ms단위로 바꿔서 뱉어주는 함수 만들기
+      function transitionMS(m, s) {
+        const result = (m * 60 + s) * 1000;
+        return result;
+      }
+
+      // 가격을 파라미터로 입력하면 10% 할인가를 뱉는 함수
+      function transitionSale(price, firstBuy) {
+        const salePrice = price * 0.1;
+
+        if (firstBuy == true) {
+          const result = (price - salePrice - 1.5).toFixed(2);
+          return parseFloat(result);
+        } else {
+          const result = (price - salePrice).toFixed(2);
+          return parseFloat(result);
+        }
+      }
+
+      console.log(transitionSale(10.3, true));
+
       // 캐러셀
       $(".slide-1").on("click", slide);
       $(".slide-2").on("click", slide);
