@@ -29,6 +29,7 @@
         </li>
       </ul>
     </nav>
+    <div class="nav-progress-bar"></div>
     <div class="block"></div>
     <div class="row">
       <div class="col">
@@ -154,15 +155,34 @@
       //   window.scrollY
       // })
 
-      // 스크롤바를 100px 내리면 로고 폰트 사이즈 작게 만들기
-
       $(window).on("scroll", function () {
         const result = $(window).scrollTop();
-
+        // 스크롤바를 100px 내리면 로고 폰트 사이즈 작게 만들기
         if (result >= 100) {
           $(".navbar-logo").css("font-size", "1rem");
         } else {
           $(".navbar-logo").css("font-size", "1.25rem");
+        }
+        // 스크롤 진척도를 네비바의 프로그레스바로 표현하기
+
+        const html = document.querySelector("html");
+        // 브라우저의 보이는 영역 높이
+        const windowClientScroll = html.clientHeight;
+        // 현재 브라우저의 스크롤 가능 높이 = 브라우저의 실제 높이 - 보이는 높이
+        const windowScroll = html.scrollHeight - windowClientScroll;
+        // 브라우저의 스크롤 실행한 값
+        const currentWindowScroll = html.scrollTop;
+
+        const navProgressBar = $(".nav-progress-bar");
+
+        const scrollPercent = parseInt(
+          (currentWindowScroll / windowScroll) * 100
+        );
+
+        if (scrollPercent > 0) {
+          navProgressBar.css("width", `${scrollPercent}%`);
+        } else {
+          navProgressBar.css("width", `0%`);
         }
       });
 
@@ -173,6 +193,7 @@
         const scroll = document.querySelector(".term").scrollTop + 100;
         const scrollHeight = document.querySelector(".term").scrollHeight;
         const scrollValue = scrollHeight - 10;
+        // 오차때문에 여유를 두고 검사
 
         if (scroll >= scrollValue) {
           alert("응 약관 다 읽음");

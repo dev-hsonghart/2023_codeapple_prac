@@ -68,3 +68,12 @@
 .navbar-logo {
   transition: all 0.5s;
 }
+
+.nav-progress-bar {
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  position: fixed;
+  margin-top: 56px;
+  z-index: 6;
+}
