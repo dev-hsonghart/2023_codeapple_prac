@@ -1,3 +1,7 @@
+:root {
+  scroll-behavior: auto;
+}
+
 .alert-box {
   padding: 12px 24px;
   background-color: aliceblue;
@@ -41,4 +45,26 @@
 
 .slide-box img {
   width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  padding-top: 56px;
+}
+
+.term {
+  width: 200px;
+  height: 100px;
+  overflow-y: scroll;
+  margin: 40px 0;
+}
+
+.navbar-logo {
+  transition: all 0.5s;
 }

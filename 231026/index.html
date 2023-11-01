@@ -22,13 +22,14 @@
     <button onclick="openAlert('block','비번입력하세요')">비밀번호</button> -->
 
     <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand navbar-logo" href="#">Navbar</a>
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a class="nav-link">메뉴</a>
         </li>
       </ul>
     </nav>
+    <div class="block"></div>
     <div class="row">
       <div class="col">
         <div id="list-example" class="list-group d-none">
@@ -80,6 +81,41 @@
     <div class="alert alert-danger">
       <span class="alert-time">5</span>초 이내 구매시 사은품 증정!
     </div>
+    <div class="term">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+      necessitatibus inventore veritatis numquam fugit doloribus placeat eum
+      repudiandae, quas autem error libero voluptate facilis fugiat quaerat quod
+      neque distinctio provident? Vel non quis doloremque asperiores enim nam
+      quibusdam. Consectetur porro molestias omnis perferendis velit commodi
+      quidem corporis necessitatibus nesciunt. Animi ad doloremque consequuntur
+      inventore vitae asperiores sunt delectus corrupti perferendis. Sapiente
+      quo blanditiis magnam nisi totam facilis corrupti beatae reiciendis quam
+      iure! Accusantium, quaerat molestiae? Repellendus perferendis nulla quo
+      amet? Perspiciatis unde quibusdam porro exercitationem architecto,
+      delectus rerum illo beatae! Fugiat harum repellendus soluta fuga, quia
+      dignissimos repudiandae animi delectus nemo officiis corrupti eaque fugit.
+      Incidunt dolorem corrupti atque neque repellendus ipsa, eos, ea dolores
+      perspiciatis esse deserunt veniam laborum? Libero consectetur recusandae,
+      a minus maiores nihil, quidem culpa possimus omnis doloribus repellendus
+      cum ad perferendis dignissimos ut assumenda, quod porro! Ipsa,
+      reprehenderit. Dolore quos corporis quidem a voluptatem odit. Accusamus
+      nemo eveniet quis nulla? Dolores dolor tempore sunt natus modi id ipsam
+      perspiciatis, quam magni voluptatibus atque cupiditate nemo qui itaque
+      consequuntur consectetur pariatur ipsum. Facere consequatur aperiam
+      corrupti? Molestias, nostrum cumque natus odio consequatur est
+      necessitatibus qui architecto maiores hic, porro odit ipsa at maxime eos
+      eius quae voluptatem distinctio quasi libero? Ullam praesentium recusandae
+      accusamus eaque amet? At cupiditate nostrum asperiores molestiae et
+      temporibus vitae fugiat natus accusantium quo, dolore reprehenderit?
+      Necessitatibus unde, enim ipsa, aspernatur officiis ullam quos explicabo
+      blanditiis ut beatae odit doloribus molestiae ad. Enim reiciendis tempora
+      est fugit nesciunt modi illo non ipsa cupiditate sit architecto assumenda
+      possimus dignissimos et, deleniti atque vero at! Impedit maxime modi,
+      delectus doloribus harum cum totam accusamus. Voluptate earum quibusdam
+      officia tempore atque placeat quam cumque ad autem doloribus suscipit
+      distinctio quaerat eum eligendi fuga quia reiciendis officiis, minus, id
+      doloremque iste ab. Mollitia iste corrupti accusantium?
+    </div>
 
     <div class="slide-container">
       <div class="slide-box">
@@ -102,6 +138,8 @@
     <button class="slide-4">4</button>
     <button class="prev">이전</button>
     <button class="next">다음</button>
+
+    <div style="height: 1000px"></div>
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -110,6 +148,37 @@
     ></script>
 
     <script>
+      // 스크롤 이벤트
+
+      // window.addEventListener("scroll", function(){
+      //   window.scrollY
+      // })
+
+      // 스크롤바를 100px 내리면 로고 폰트 사이즈 작게 만들기
+
+      $(window).on("scroll", function () {
+        const result = $(window).scrollTop();
+
+        if (result >= 100) {
+          $(".navbar-logo").css("font-size", "1rem");
+        } else {
+          $(".navbar-logo").css("font-size", "1.25rem");
+        }
+      });
+
+      // 회원약관 박스를 거의 끝까지 스크롤하면 alert를 띄워주기
+      const termBox = $(".term");
+
+      termBox.on("scroll", function () {
+        const scroll = document.querySelector(".term").scrollTop + 100;
+        const scrollHeight = document.querySelector(".term").scrollHeight;
+        const scrollValue = scrollHeight - 10;
+
+        if (scroll >= scrollValue) {
+          alert("응 약관 다 읽음");
+        }
+      });
+
       // 함수에 분과 초를 차례로 파미로 입력하면 ms단위로 바꿔서 뱉어주는 함수 만들기
       function transitionMS(m, s) {
         const result = (m * 60 + s) * 1000;
