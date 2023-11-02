@@ -149,6 +149,18 @@
     ></script>
 
     <script>
+      const blackBg = $(".black-bg");
+
+      blackBg.on("click", function (e) {
+        e.stopPropagation;
+
+        if (e.target.className == "black-bg") {
+          blackBg.css("display", "none");
+        }
+      });
+    </script>
+
+    <script>
       // 스크롤 이벤트
 
       // window.addEventListener("scroll", function(){
