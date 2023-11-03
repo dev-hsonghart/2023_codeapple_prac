@@ -11,3 +11,11 @@ function findName(name) {
     }
   });
 }
+// item == "철수" 는 없어도 되는 것이였음
+
+// Q2. 구구단을 2단부터 9단까지 콘솔창에 출력하기
+for (let i = 2; i < 10; i++) {
+  for (let j = 1; j < 10; j++) {
+    console.log(i * j);
+  }
+}
