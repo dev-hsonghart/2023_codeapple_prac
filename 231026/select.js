@@ -9,18 +9,27 @@ const selectSize = document.querySelector(".select-2");
 //   }
 // };
 
+let pants = [28, 30, 32];
+let shirts = [95, 100, 105];
+
 selectProduct.addEventListener("input", function (e) {
   const value = e.currentTarget.value;
 
   if (value == "셔츠") {
     selectSize.classList.add("show");
-    const option = `<option>90</option>
-    <option>100</option>`;
-    selectSize.innerHTML = option;
+    selectSize.innerHTML = "";
+    shirts.forEach(function (shirt) {
+      selectSize.insertAdjacentHTML("beforeend", `<option>${shirt}</option>`);
+    });
   } else if (value == "바지") {
-    const option = `<option>25</option><option>30</option>`;
+    selectSize.classList.add("show");
+    selectSize.innerHTML = "";
+    pants.forEach(function (pant) {
+      selectSize.insertAdjacentHTML("beforeend", `<option>${pant}</option>`);
+    });
+    // const option = `<option>25</option><option>30</option>`;
 
-    selectSize.innerHTML = option;
+    // selectSize.innerHTML = option;
   } else {
     selectSize.classList.remove("show");
   }
