@@ -19,3 +19,26 @@ for (let i = 2; i < 10; i++) {
     console.log(i * j);
   }
 }
+
+// Q3. 자신의 평균점수가 이전 성적의 평균보다 높은지 파악하는 계산기 만들기
+let testScore = [10, 20, 30, 40, 50];
+let testAverage = 40;
+
+function checkMyScore(array, score) {
+  let totalScore = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    totalScore = totalScore + array[i];
+  }
+
+  let prevScore = totalScore / array.length;
+  let gap = Math.abs(prevScore - score);
+
+  if (prevScore <= score) {
+    console.log(`이전보다 ${gap}점 올라갔네`);
+  } else if (prevScore == score) {
+    console.log(`이전이랑 같음`);
+  } else {
+    console.log(`이전보다 ${gap}점 떨어짐`);
+  }
+}
