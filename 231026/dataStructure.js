@@ -6,8 +6,8 @@ let car = {
 const cardCarName = document.querySelector(".card-car-name");
 const cardCarPrice = document.querySelector(".card-car-price");
 
-cardCarName.innerHTML = car.name;
-cardCarPrice.innerHTML = car.price[0];
+// cardCarName.innerHTML = car.name;
+// cardCarPrice.innerHTML = car.price[0];
 
 // 자바스크립트 숙제 20 용 데이터
 var products = [
@@ -16,15 +16,13 @@ var products = [
   { id: 2, price: 60000, title: "Black Monastery" },
 ];
 
-const cardTitles = document.querySelectorAll("h5");
-const cardPrices = document.querySelectorAll("p");
-
-console.log(cardTitles);
+const cardTitles = document.querySelectorAll(".card-body h5");
+const cardPrices = document.querySelectorAll(".card-body p");
 
 for (let i = 0; i < cardTitles.length; i++) {
   const cardTitle = cardTitles[i];
   const cardPrice = cardPrices[i];
 
   cardTitle.innerHTML = products[i].title;
-  cardPrice.innerHTML = products[i].price;
+  cardPrice.innerHTML = `가격 : ${products[i].price}`;
 }
