@@ -6,7 +6,7 @@ var products = [
 
 const row = document.querySelector(".row");
 
-const cardTemplete = function (index) {
+const cardTemplete = function (products, index) {
   return `<div class="col-sm-4">
   <img src="https://via.placeholder.com/600" class="w-100" />
   <h5>${products[index].title}</h5>
@@ -15,5 +15,18 @@ const cardTemplete = function (index) {
 };
 
 for (let i = 0; i < products.length; i++) {
-  row.insertAdjacentHTML("beforeend", cardTemplete(i));
+  row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
+}
+
+const productBtn = document.querySelector(".btn");
+
+productBtn.addEventListener("click", getProduct);
+
+function getProduct() {
+  $.get("https://codingapple1.github.io/js/more1.json").done(function (data) {
+    const products = data;
+    for (let i = 0; i < products.length; i++) {
+      row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
+    }
+  });
 }
