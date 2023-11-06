@@ -11,6 +11,7 @@ const cardTemplete = function (products, index) {
   <img src="https://via.placeholder.com/600" class="w-100" />
   <h5>${products[index].title}</h5>
   <p>가격 : ${products[index].price}</p>
+  <button class="buy">구매</button> 
   </div>`;
 };
 
@@ -37,6 +38,40 @@ function getProduct() {
       makeCard(data);
     });
     productBtn.classList.add("d-none");
+  }
+}
+
+// 장바구니 버튼 - 로컬스토리지에 저장하기
+const saveCartBtns = document.querySelectorAll(".buy");
+
+for (let i = 0; i < saveCartBtns.length; i++) {
+  saveCartBtns[i].addEventListener("click", saveStorage);
+}
+// 빈 배열 신규 생성하기
+let cart = [];
+
+function saveStorage(e) {
+  // 클릭이 발생한 html요소의 형제 요소 중 타이틀 요소 찾기
+  const targetTitle =
+    e.target.previousElementSibling.previousElementSibling.innerText;
+
+  const isCart = localStorage.getItem("cart");
+  // 이미 로컬스토리지에 cart가 있을 경우
+  if (isCart != null) {
+    // 기존 cart를 불러오기
+    let loadCart = JSON.parse(isCart);
+    // cart에 선택한 타이틀 넣기
+    loadCart.push(targetTitle);
+    // 로컬스토리지에 cart 올리기
+    const newCart = JSON.stringify(loadCart);
+    localStorage.setItem("cart", newCart);
+  } else {
+    // 해당 요소를 cart 배열에 넣기
+    cart.push(targetTitle);
+    // 배열을 json형태로 바꾸기
+    const newCart = JSON.stringify(cart);
+    // 로컬스토리지에 cart 키에 값으로 넣기
+    localStorage.setItem("cart", newCart);
   }
 }
 
