@@ -14,9 +14,12 @@ const cardTemplete = function (products, index) {
   </div>`;
 };
 
-for (let i = 0; i < products.length; i++) {
-  row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
+function makeCard(product) {
+  for (let i = 0; i < product.length; i++) {
+    row.insertAdjacentHTML("beforeend", cardTemplete(product, i));
+  }
 }
+makeCard(products);
 
 const productBtn = document.querySelector(".btn");
 productBtn.addEventListener("click", getProduct);
@@ -26,18 +29,12 @@ let count = 0;
 function getProduct() {
   if (count == 0) {
     $.get("https://codingapple1.github.io/js/more1.json").done(function (data) {
-      const products = data;
-      for (let i = 0; i < products.length; i++) {
-        row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
-      }
+      makeCard(data);
     });
     count++;
   } else if (count == 1) {
     $.get("https://codingapple1.github.io/js/more2.json").done(function (data) {
-      const products = data;
-      for (let i = 0; i < products.length; i++) {
-        row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
-      }
+      makeCard(data);
     });
     productBtn.classList.add("d-none");
   }
