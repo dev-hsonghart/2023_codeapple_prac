@@ -19,14 +19,26 @@ for (let i = 0; i < products.length; i++) {
 }
 
 const productBtn = document.querySelector(".btn");
-
 productBtn.addEventListener("click", getProduct);
 
+let count = 0;
+
 function getProduct() {
-  $.get("https://codingapple1.github.io/js/more1.json").done(function (data) {
-    const products = data;
-    for (let i = 0; i < products.length; i++) {
-      row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
-    }
-  });
+  if (count == 0) {
+    $.get("https://codingapple1.github.io/js/more1.json").done(function (data) {
+      const products = data;
+      for (let i = 0; i < products.length; i++) {
+        row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
+      }
+    });
+    count++;
+  } else if (count == 1) {
+    $.get("https://codingapple1.github.io/js/more2.json").done(function (data) {
+      const products = data;
+      for (let i = 0; i < products.length; i++) {
+        row.insertAdjacentHTML("beforeend", cardTemplete(products, i));
+      }
+    });
+    productBtn.classList.add("d-none");
+  }
 }
