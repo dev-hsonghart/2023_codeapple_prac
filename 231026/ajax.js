@@ -51,6 +51,11 @@ for (let i = 0; i < saveCartBtns.length; i++) {
 let cart = [];
 
 function saveStorage(e) {
+  // 새로운 오브젝트 생성
+  const productObj = {
+    title: "",
+    count: 0,
+  };
   // 클릭이 발생한 html요소의 형제 요소 중 타이틀 요소 찾기
   const targetTitle =
     e.target.previousElementSibling.previousElementSibling.innerText;
@@ -60,14 +65,31 @@ function saveStorage(e) {
   if (isCart != null) {
     // 기존 cart를 불러오기
     let loadCart = JSON.parse(isCart);
-    // cart에 선택한 타이틀 넣기
-    loadCart.push(targetTitle);
-    // 로컬스토리지에 cart 올리기
-    const newCart = JSON.stringify(loadCart);
-    localStorage.setItem("cart", newCart);
+
+    // 로컬스토리지 안에 추가할 타이틀이 있는지 여부 확인
+    let found = loadCart.filter((e) => e.title === targetTitle);
+    // filter는 array를 반환함
+
+    if (found.length > 0) {
+      found[0].count++;
+
+      const newCart = JSON.stringify(loadCart);
+      localStorage.setItem("cart", newCart);
+    } else {
+      productObj.title = targetTitle;
+      productObj.count = count + 1;
+
+      // // cart에 선택한 객체 넣기
+      loadCart.push(productObj);
+      // // 로컬스토리지에 cart 올리기
+      const newCart = JSON.stringify(loadCart);
+      localStorage.setItem("cart", newCart);
+    }
   } else {
     // 해당 요소를 cart 배열에 넣기
-    cart.push(targetTitle);
+    productObj.title = targetTitle;
+    productObj.count = count + 1;
+    cart.push(productObj);
     // 배열을 json형태로 바꾸기
     const newCart = JSON.stringify(cart);
     // 로컬스토리지에 cart 키에 값으로 넣기
