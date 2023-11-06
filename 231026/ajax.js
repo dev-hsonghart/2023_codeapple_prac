@@ -39,3 +39,36 @@ function getProduct() {
     productBtn.classList.add("d-none");
   }
 }
+
+// 문자열 역순으로 정렬 - sort()
+
+const sortBtn = document.querySelector("#sort-reverse");
+sortBtn.addEventListener("click", sortReverse);
+
+function sortReverse() {
+  const products2 = [...products];
+  // 다나가순으로 배열 정렬
+  products2.sort(function (a, b) {
+    return a.title > b.title ? -1 : 1;
+  });
+
+  // 기존 html 비우기
+  row.innerHTML = "";
+  // 정렬된 배열을 출력하기
+  makeCard(products2);
+}
+
+// 6만원 이하만 보기 - filter
+
+const filterBtn = document.querySelector("#filter");
+filterBtn.addEventListener("click", filterPrice);
+
+function filterPrice() {
+  const filteredList = products.filter(function (a) {
+    return a.price < 60000;
+  });
+  // 기존 html 비우기
+  row.innerHTML = "";
+  // 정렬된 배열을 출력하기
+  makeCard(filteredList);
+}
