@@ -298,16 +298,19 @@
       let clicked = false;
 
       // 마우스 클릭
-      $(".slide-box")
-        .eq(0)
-        .on("mousedown", function (e) {
-          console.log("클릭함");
-          clicked = true;
-          mousedownX = e.clientX;
-          $(".slide-container").css("transition", "none");
-        });
+
+      function mouseDown(e) {
+        const index = $(".slide-box").index(this);
+        clicked = true;
+        mousedownX = e.clientX;
+        $(".slide-container").css("transition", "none");
+        console.log(`클릭이 발생한 곳은 ${index}번째 입니다.`);
+      }
+
+      $(".slide-box").on("mousedown", mouseDown);
 
       // 마우스 이동
+
       $(".slide-box")
         .eq(0)
         .on("mousemove", function (e) {
@@ -340,13 +343,7 @@
         });
 
       // 두번째 사진
-      $(".slide-box")
-        .eq(1)
-        .on("mousedown", function (e) {
-          clicked = true;
-          mousedownX = e.clientX;
-          $(".slide-container").css("transition", "none");
-        });
+      // $(".slide-box").eq(1).on("mousedown", mouseDown);
 
       // 마우스 이동
       $(".slide-box")
@@ -385,13 +382,7 @@
 
       // 세번째 사진
 
-      $(".slide-box")
-        .eq(2)
-        .on("mousedown", function (e) {
-          clicked = true;
-          mousedownX = e.clientX;
-          $(".slide-container").css("transition", "none");
-        });
+      // $(".slide-box").eq(2).on("mousedown", mouseDown);
 
       // 마우스 이동
       $(".slide-box")
@@ -429,13 +420,7 @@
         });
 
       // 4번째 사진
-      $(".slide-box")
-        .eq(3)
-        .on("mousedown", function (e) {
-          clicked = true;
-          mousedownX = e.clientX;
-          $(".slide-container").css("transition", "none");
-        });
+      // $(".slide-box").eq(3).on("mousedown", mouseDown);
 
       // 마우스 이동
       $(".slide-box")
