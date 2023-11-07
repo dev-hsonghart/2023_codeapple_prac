@@ -12,6 +12,7 @@ const cardTemplete = function (products, index) {
   <h5>${products[index].title}</h5>
   <p>가격 : ${products[index].price}</p>
   <button class="buy">구매</button> 
+  
   </div>`;
 };
 
@@ -86,7 +87,7 @@ function saveStorage(e) {
       localStorage.setItem("cart", newCart);
     }
   } else {
-    // 해당 요소를 cart 배열에 넣기
+    // 스토리지에 cart가 없을 경우 해당 요소를 cart 배열에 넣기
     productObj.title = targetTitle;
     productObj.count = count + 1;
     cart.push(productObj);
