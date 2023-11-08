@@ -5,6 +5,7 @@ body {
 .drag-area {
   padding: 40px;
   background-color: #000;
+  min-height: 300px;
 }
 
 .drag-area input {
@@ -17,4 +18,8 @@ span {
 
 .title {
   margin-top: 50px;
+}
+
+.info-text {
+  color: white;
 }
