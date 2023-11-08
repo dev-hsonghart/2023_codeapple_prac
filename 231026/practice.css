@@ -1,0 +1,20 @@
+body {
+  background-color: #eee;
+}
+
+.drag-area {
+  padding: 40px;
+  background-color: #000;
+}
+
+.drag-area input {
+  width: 100%;
+}
+
+span {
+  background-color: yellow;
+}
+
+.title {
+  margin-top: 50px;
+}
