@@ -33,6 +33,7 @@ function viewSearchProduct(item, value) {
   }
 
   searchStoreList.push(item);
+
   storeRow.innerHTML = "";
 
   initProducts(searchStoreList);
@@ -46,12 +47,21 @@ function searchProduct(array) {
       const title = array[i].title;
       const brand = array[i].brand;
       const product = array[i];
+      const searchItem = {
+        id: product.id,
+        title: product.title,
+        brand: product.brand,
+        photo: product.photo,
+        price: product.price,
+      };
+
       if (brand.indexOf(searchInputValue) != -1) {
-        viewSearchProduct(product, searchInputValue);
+        viewSearchProduct(searchItem, searchInputValue);
       } else if (title.indexOf(searchInputValue) != -1) {
-        viewSearchProduct(product, searchInputValue);
+        viewSearchProduct(searchItem, searchInputValue);
       }
     }
+
     searchStoreList = [];
   } else {
     storeRow.innerHTML = "";
