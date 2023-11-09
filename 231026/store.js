@@ -2,12 +2,12 @@
 // 상품 템플릿
 const storeList = [];
 const productTemplete = function (data, i) {
-  return `<div class="col-sm-3">
-  <div class="bg-white p-3 card-box" id="${data[i].id}">
-  <img src="./img/${data[i].photo}" class="w-100" />
-  <h5>${data[i].title}</h5>
-  <p>${data[i].brand}</p>
-  <p>가격 : ${data[i].price}</p>
+  return `<div class="col-sm-3 store-item" draggable="true">
+  <div class="bg-white p-3 card-box" draggable="false" id="${data[i].id}">
+  <img src="./img/${data[i].photo}" class="w-100" draggable="false"/>
+  <h5 draggable="false">${data[i].title}</h5>
+  <p draggable="false">${data[i].brand}</p>
+  <p draggable="false">가격 : ${data[i].price}</p>
   <button class="buy">담기</button>
 </div>
   </div>`;
@@ -39,6 +39,7 @@ function viewSearchProduct(item, value) {
   initProducts(searchStoreList);
   // 새로 생성된 담기 버튼에 click 이벤트 심기
   clickBuy();
+  feelDrag();
 }
 
 function searchProduct(array) {
@@ -70,6 +71,7 @@ function searchProduct(array) {
     storeRow.innerHTML = "";
     initProducts(storeList);
     clickBuy();
+    feelDrag();
   }
 }
 

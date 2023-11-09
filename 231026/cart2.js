@@ -2,9 +2,9 @@ let cartStoreList = [];
 const cartRow = document.querySelector("#cartRow");
 
 const cartTemplete = function (data, i) {
-  return `<div class="col-sm-4">
+  return `<div class="col-sm-4" draggable="false">
   <div class="bg-white p-3" id="${data[i].id}">
-    <img src="./img/${data[i].photo}" class="w-100" />
+    <img src="./img/${data[i].photo}" class="w-100"draggable="false" />
     <h5>${data[i].title}</h5>
     <p>${data[i].brand}</p>
     <p>가격 : ${data[i].price}</p>
@@ -94,6 +94,7 @@ function cartInProduct(e) {
       cartStoreList.push(newProduct);
     }
   }
+
   makeCartProduct(cartStoreList);
   clickCount();
 }
@@ -103,4 +104,4 @@ function clickBuy() {
   btns.on("click", cartInProduct);
 }
 
-window.onload = clickBuy;
+window.onload = clickBuy();
