@@ -18,15 +18,22 @@ function clickCount() {
   const inputs = $("#test");
   inputs.blur(function (e) {
     const parentId = e.target.parentNode.id;
-    console.log("수량조절완료");
-    const fixedCount = e.target.value;
-    console.log(parentId);
+
+    const fixedCount = parseInt(e.target.value);
+
+    function findItem(item) {
+      return item.id == parentId;
+    }
+    const cartProduct = cartStoreList.find(findItem);
+
     // 수량조절 완료 후 input value 값이 1 이상일 경우 해당 obj에 수량 반영
     if (fixedCount >= 1) {
-      console.log("수량 반영해야함");
+      cartProduct.count = fixedCount;
     } else {
       // input value 값이 0 이하일 경우 alert 출력 후 1로 복귀
       alert("0개 이상 작성해야함");
+      makeCartProduct(cartStoreList);
+      clickCount();
     }
   });
 }

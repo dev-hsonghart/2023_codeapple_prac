@@ -2,9 +2,10 @@
 
 function feelDrag() {
   const storeItem = $(".store-item");
+  const dropZone = $(".drag-zone");
+
   storeItem.on("dragstart", function (e) {
     const divId = e.target.children[0].id;
-    const dropZone = $(".drag-zone");
 
     function findItem(item) {
       // 클릭한 버튼의 id와 같은 id를 가진 아이템이 있는지 확인
@@ -43,5 +44,3 @@ function feelDrag() {
     });
   });
 }
-
-// feelDrag()
