@@ -98,7 +98,9 @@ function cartInProduct(e) {
   clickCount();
 }
 
-window.onload = function () {
+function clickBuy() {
   const btns = $(".buy");
   btns.on("click", cartInProduct);
-};
+}
+
+window.onload = clickBuy;

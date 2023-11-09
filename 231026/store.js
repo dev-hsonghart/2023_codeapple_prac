@@ -37,6 +37,8 @@ function viewSearchProduct(item, value) {
   storeRow.innerHTML = "";
 
   initProducts(searchStoreList);
+  // 새로 생성된 담기 버튼에 click 이벤트 심기
+  clickBuy();
 }
 
 function searchProduct(array) {
@@ -47,6 +49,7 @@ function searchProduct(array) {
       const title = array[i].title;
       const brand = array[i].brand;
       const product = array[i];
+      // 검색 데이터에 저장할 객체 생성
       const searchItem = {
         id: product.id,
         title: product.title,
@@ -54,7 +57,7 @@ function searchProduct(array) {
         photo: product.photo,
         price: product.price,
       };
-
+      // 입력값이 현재 아이템에 있는지 확인하고 있을 경우 검색결과값에 출력한다.
       if (brand.indexOf(searchInputValue) != -1) {
         viewSearchProduct(searchItem, searchInputValue);
       } else if (title.indexOf(searchInputValue) != -1) {
@@ -66,6 +69,7 @@ function searchProduct(array) {
   } else {
     storeRow.innerHTML = "";
     initProducts(storeList);
+    clickBuy();
   }
 }
 
