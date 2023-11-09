@@ -8,45 +8,36 @@ const cartTemplete = function (data, i) {
     <h5>${data[i].title}</h5>
     <p>${data[i].brand}</p>
     <p>가격 : ${data[i].price}</p>
-    <input type="number" value="${data[i].count}" id="test"/>
+    <input type="number" value="${data[i].count}" class="countInput"/>
   </div>
 </div>`;
 };
 
-// 수량 입력칸 클릭 시 수량 반영하기
-function clickCount() {
-  const inputs = $("#test");
-  inputs.blur(function (e) {
-    const parentId = e.target.parentNode.id;
+// 장바구니 아이템의 수량 인풋이 포커스를 잃을 때 clickBlur를 실행해라
+function clickBlur(e) {
+  const parentId = e.target.parentNode.id;
+  const fixedCount = parseInt(e.target.value);
 
-    const fixedCount = parseInt(e.target.value);
+  function findItem(item) {
+    return item.id == parentId;
+  }
+  const cartProduct = cartStoreList.find(findItem);
 
-    function findItem(item) {
-      return item.id == parentId;
-    }
-    const cartProduct = cartStoreList.find(findItem);
+  // 수량조절 완료 후 input value 값이 1 이상일 경우 해당 obj에 수량 반영
+  if (fixedCount >= 1) {
+    cartProduct.count = fixedCount;
+  } else {
+    // input value 값이 0 이하일 경우 alert 출력 후 1로 복귀
+    alert("0개 이상 작성해야함");
+  }
 
-    // 수량조절 완료 후 input value 값이 1 이상일 경우 해당 obj에 수량 반영
-    if (fixedCount >= 1) {
-      cartProduct.count = fixedCount;
-    } else {
-      // input value 값이 0 이하일 경우 alert 출력 후 1로 복귀
-      alert("0개 이상 작성해야함");
-      makeCartProduct(cartStoreList);
-      clickCount();
-    }
-  });
+  makeCartProduct(cartStoreList);
 }
 
-// 담기 버튼 클릭 이벤트 발생 위치 찾기
-
-function makeCartProduct(array) {
-  // 장바구니 배열의 데이터를 장바구니 영역에 출력하기
-  cartRow.innerHTML = "";
-  for (let i = 0; i < array.length; i++) {
-    // 템플릿에 하나씩 저장하고 html 에 출력하기
-    cartRow.insertAdjacentHTML("beforeend", cartTemplete(array, i));
-  }
+// 수량 입력칸 클릭 시 수량 반영하기
+function clickCount() {
+  const inputs = $(".countInput");
+  inputs.blur(clickBlur);
 }
 
 function findProduct(objId) {
@@ -69,6 +60,19 @@ function findProduct(objId) {
     count: 1,
   };
   return newItem;
+}
+
+// 담기 버튼 클릭 이벤트 발생 위치 찾기
+
+function makeCartProduct(array) {
+  // 장바구니 배열의 데이터를 장바구니 영역에 출력하기
+  cartRow.innerHTML = "";
+  for (let i = 0; i < array.length; i++) {
+    // 템플릿에 하나씩 저장하고 html 에 출력하기
+    cartRow.insertAdjacentHTML("beforeend", cartTemplete(array, i));
+  }
+  clickCount();
+  viewTotalPrice(array);
 }
 
 // 장바구니에 아이템 없으로 기초값 설정
@@ -103,7 +107,6 @@ function cartInProduct(e) {
   }
 
   makeCartProduct(cartStoreList);
-  clickCount();
 }
 
 function clickBuy() {
