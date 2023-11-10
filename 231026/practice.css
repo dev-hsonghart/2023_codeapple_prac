@@ -34,7 +34,7 @@ footer {
 
 .purcharse-modal {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   z-index: 3;
 }
@@ -49,7 +49,8 @@ footer {
   height: 100%;
 }
 
-.modal-box {
+.modal-box,
+.receipt-box {
   background-color: white;
   width: 70%;
   border-radius: 10px;

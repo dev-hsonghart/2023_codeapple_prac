@@ -1,5 +1,6 @@
 function printModal() {
-  console.log("모달창 띄웠당");
+  const purcharseModal = document.querySelector(".purcharse-modal");
+  purcharseModal.classList.remove("hidden");
 }
 
 function calculatePrice() {
@@ -27,9 +28,8 @@ function viewTotalPrice(array) {
     const fixPrice = calculatePrice();
 
     totalView.insertAdjacentHTML("beforeend", totalViewTemplete(fixPrice));
+    // 구매하기 버튼 클릭 시 아래 함수 호출
+    const purchase = document.querySelector("#purchase");
+    purchase.addEventListener("click", printModal);
   }
-
-  // 구매하기 버튼 클릭 시 아래 함수 호출
-  const purchase = document.querySelector("#purchase");
-  purchase.addEventListener("click", printModal);
 }

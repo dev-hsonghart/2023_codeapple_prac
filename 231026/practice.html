@@ -23,18 +23,28 @@
         </li>
       </ul>
     </nav>
-    <div class="purcharse-modal">
+    <div class="purcharse-modal hidden">
       <div class="dim">
         <div class="modal-box">
-          <form>
+          <form id="buyForm">
             <p>성함</p>
-            <input type="text" />
+            <input required type="text" name="userName" />
             <p>연락처</p>
-            <input type="text" />
+            <input required type="text" name="userPhoneNum" />
+            <div class="error-message hidden">
+              -없이 휴대폰번호만 입력해주세요
+            </div>
             <div class=""></div>
             <button type="submit" id="purcharseSubmit">입력완료</button>
-            <button type="button" id="purcharseClose">닫기</button>
+            <button type="button" class="purcharseClose">닫기</button>
           </form>
+        </div>
+        <div class="receipt-box hidden">
+          <h5>영수증</h5>
+          <p class="receipt-date">구매일시</p>
+          <p class="receipt-item-info"></p>
+          <p class="receipt-total-price"></p>
+          <button type="button" class="purcharseClose">닫기</button>
         </div>
       </div>
     </div>
@@ -80,5 +90,6 @@
     <script defer src="cart2.js"></script>
     <script defer src="drag.js"></script>
     <script defer src="totalPrice.js"></script>
+    <script defer src="modal.js"></script>
   </body>
 </html>
