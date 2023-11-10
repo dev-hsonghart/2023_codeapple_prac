@@ -1,3 +1,7 @@
+function printModal() {
+  console.log("모달창 띄웠당");
+}
+
 function calculatePrice() {
   let totalPrice = 0;
   // 최종가격은 각 물품에 * 갯수를 다 더하는 것.
@@ -14,7 +18,7 @@ function viewTotalPrice(array) {
   const totalViewTemplete = (price) => {
     return `<h5 class="title">최종가격</h5>
     <p class="totalPrice">합계 : ${price}</p>
-    <button type="button">구매하기</button>`;
+    <button type="button" id="purchase">구매하기</button>`;
   };
   // 최종가격 뷰가 나타나는 조건 : 장바구니에 아이템이 있을 때만
   totalView.innerHTML = "";
@@ -24,4 +28,8 @@ function viewTotalPrice(array) {
 
     totalView.insertAdjacentHTML("beforeend", totalViewTemplete(fixPrice));
   }
+
+  // 구매하기 버튼 클릭 시 아래 함수 호출
+  const purchase = document.querySelector("#purchase");
+  purchase.addEventListener("click", printModal);
 }
