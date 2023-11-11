@@ -43,8 +43,8 @@ function viewSearchProduct(item, value) {
 }
 
 function searchProduct(array) {
-  // 검색이 입력되면
   const searchInputValue = document.querySelector("#searchInput").value;
+  // 검색이 입력되면
   if (searchInputValue != "") {
     for (let i = 0; i < array.length; i++) {
       const title = array[i].title;

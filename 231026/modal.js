@@ -61,7 +61,7 @@ receiptForm.onsubmit = function (e) {
   e.preventDefault();
 
   // 입력값 가져오기
-  const nameValue = this.userName.value;
+
   const phoneValue = this.userPhoneNum.value;
 
   // 입력칸 validation 확인 요소 : 연락처는 00000000000 으로 숫자가 11자인지 확인 필요
@@ -77,10 +77,9 @@ receiptForm.onsubmit = function (e) {
 
   if (checkResult != true) {
     // 휴대폰번호 유효성 검사가 성공일 경우
-    console.log("범인 누구임");
+
     errorMsg.classList.remove("hidden");
   } else {
-    console.log("범인 누구임?");
     errorMsg.classList.add("hidden");
     // 모달창 닫고 영수증 창 열기
     purchaseBox.classList.add("hidden");
@@ -100,10 +99,14 @@ receiptForm.onsubmit = function (e) {
     // 만약 영수증의 닫기버튼을 누를경우, 장바구니 데이터를 비운다.
     const checkModal = e.target.parentNode.id;
     if (checkModal != "buyForm") {
+      let searchInputValue = document.querySelector("#searchInput");
       reciptBox.classList.add("hidden");
       cartStoreList = [];
       makeCartProduct(cartStoreList);
       $("#cartRow").html(`<p class="info-text">여기에 드래그</p>`);
+
+      searchInputValue.value = ""; // 검색 입력값 초기화
+      searchProduct(storeList); // 상품 리스트 초기화
     }
   });
 };
