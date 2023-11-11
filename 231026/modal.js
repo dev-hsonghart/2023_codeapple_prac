@@ -13,6 +13,7 @@ const reciptIemTemplete = function (data, i) {
 };
 
 const receiptForm = document.getElementById("buyForm");
+const purchaseBox = document.querySelector(".modal-box");
 
 // 지금 시간 구하기
 function getTime() {
@@ -35,12 +36,15 @@ function getTime() {
 
 // 영수증창 구현하기
 function makeReciept() {
+  const viewFinalItem = document.querySelector(".receipt-content");
+  // 영수증 내용 초기화
+  viewFinalItem.innerHTML = "";
   // 구매일시 : submit 버튼 클릭을 한 시간 출력
   const today = getTime();
   $(".receipt-date").html(today);
   // 구매 아이템 : 장바구니 list에 들어있는 아이템 출력 반복문으로.
   //  제품명, 브랜드명, 제품 가격, 구매 수량, 해당 제품의 가격 합계
-  const viewFinalItem = document.querySelector(".receipt-item-info");
+
   for (let i = 0; i < cartStoreList.length; i++) {
     viewFinalItem.insertAdjacentHTML(
       "beforeend",
@@ -68,13 +72,15 @@ receiptForm.onsubmit = function (e) {
   const checkResult = checkOnlyNumber(phoneValue);
 
   const errorMsg = document.querySelector(".error-message");
-  const purchaseBox = document.querySelector(".modal-box");
+
   const reciptBox = document.querySelector(".receipt-box");
 
   if (checkResult != true) {
     // 휴대폰번호 유효성 검사가 성공일 경우
+    console.log("범인 누구임");
     errorMsg.classList.remove("hidden");
   } else {
+    console.log("범인 누구임?");
     errorMsg.classList.add("hidden");
     // 모달창 닫고 영수증 창 열기
     purchaseBox.classList.add("hidden");
@@ -94,6 +100,7 @@ receiptForm.onsubmit = function (e) {
     // 만약 영수증의 닫기버튼을 누를경우, 장바구니 데이터를 비운다.
     const checkModal = e.target.parentNode.id;
     if (checkModal != "buyForm") {
+      reciptBox.classList.add("hidden");
       cartStoreList = [];
       makeCartProduct(cartStoreList);
       $("#cartRow").html(`<p class="info-text">여기에 드래그</p>`);

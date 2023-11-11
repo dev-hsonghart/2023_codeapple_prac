@@ -1,6 +1,7 @@
 function printModal() {
   const purcharseModal = document.querySelector(".purcharse-modal");
   purcharseModal.classList.remove("hidden");
+  purchaseBox.classList.remove("hidden");
 }
 
 function calculatePrice() {

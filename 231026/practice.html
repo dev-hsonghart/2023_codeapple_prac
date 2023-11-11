@@ -25,7 +25,7 @@
     </nav>
     <div class="purcharse-modal hidden">
       <div class="dim">
-        <div class="modal-box">
+        <div class="modal-box hidden">
           <form id="buyForm">
             <p>성함</p>
             <input required type="text" name="userName" />
@@ -41,9 +41,8 @@
         </div>
         <div class="receipt-box hidden">
           <h5>영수증</h5>
-          <p class="receipt-date">구매일시</p>
-          <p class="receipt-item-info"></p>
-          <p class="receipt-total-price"></p>
+          <hr />
+          <div class="receipt-content"></div>
           <button type="button" class="purcharseClose">닫기</button>
         </div>
       </div>
