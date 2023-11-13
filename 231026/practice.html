@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="practice.css" />
+    <title>20년도 기능 예제 과제</title>
+  </head>
+  <body>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+      <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item d-flex">
+          <a class="nav-link">Home</a>
+          <a class="nav-link">스토어</a>
+          <a class="nav-link">시공견적</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="purcharse-modal hidden">
+      <div class="dim">
+        <div class="modal-box hidden">
+          <form id="buyForm">
+            <p>성함</p>
+            <input required type="text" name="userName" />
+            <p>연락처</p>
+            <input required type="text" name="userPhoneNum" />
+            <div class="error-message hidden">
+              -없이 휴대폰번호만 입력해주세요
+            </div>
+            <div class=""></div>
+            <button type="submit" id="purcharseSubmit">입력완료</button>
+            <button type="button" class="purcharseClose">닫기</button>
+          </form>
+        </div>
+        <div class="receipt-box hidden">
+          <h5>영수증</h5>
+          <hr />
+          <div class="receipt-content"></div>
+          <button type="button" class="purcharseClose">닫기</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <input
+        type="text"
+        placeholder="검색어입력"
+        id="searchInput"
+        class="mb-4"
+        onkeyup="searchProduct(storeList)"
+      />
+      <div class="row g-2" id="storeRow"></div>
+
+      <h5 class="title">장바구니</h5>
+
+      <div class="row">
+        <div class="row g-4 drag-zone" id="cartRow">
+          <p class="info-text">여기에 드래그</p>
+        </div>
+      </div>
+
+      <div class="total"></div>
+      <footer></footer>
+    </div>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 부트스트랩 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      ;
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      ;
+      crossorigin="anonymous"
+      ;
+    ></script>
+    <!-- main js  -->
+    <script defer src="store.js"></script>
+    <script defer src="cart2.js"></script>
+    <script defer src="drag.js"></script>
+    <script defer src="totalPrice.js"></script>
+    <script defer src="modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+:root {
+  scroll-behavior: auto;
+}
+
+.alert-box {
+  padding: 12px 24px;
+  background-color: aliceblue;
+  color: purple;
+  border-radius: 5px;
+  display: none;
+}
+
+.black-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 6;
+  padding: 30px;
+  display: none;
+}
+.white-bg {
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.show {
+  display: block;
+}
+
+/* 캐러셀 */
+
+.slide-container {
+  width: 400vw;
+  height: 300px;
+  /* transition: all 1s; */
+}
+
+.slide-box {
+  width: 100vw;
+
+  float: left;
+}
+
+.slide-box img {
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  padding-top: 56px;
+}
+
+.term {
+  width: 200px;
+  height: 100px;
+  overflow-y: scroll;
+  margin: 40px 0;
+}
+
+.navbar-logo {
+  transition: all 0.5s;
+}
+
+.nav-progress-bar {
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  position: fixed;
+  margin-top: 56px;
+  z-index: 6;
+}

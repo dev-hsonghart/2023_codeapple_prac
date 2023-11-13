@@ -1,0 +1,62 @@
+body {
+  background-color: #eee;
+}
+
+.drag-zone {
+  padding: 40px;
+  background-color: #000;
+  min-height: 300px;
+}
+
+.drag-zone input {
+  width: 100%;
+}
+
+span {
+  background-color: yellow;
+}
+
+.title {
+  margin-top: 50px;
+}
+
+.info-text {
+  color: white;
+}
+
+footer {
+  height: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.purcharse-modal {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+
+.dim {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.modal-box,
+.receipt-box {
+  background-color: white;
+  width: 70%;
+  border-radius: 10px;
+  padding: 30px 40px 50px 40px;
+}
+
+.modal-box input {
+  margin-bottom: 30px;
+}
