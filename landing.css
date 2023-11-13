@@ -1,0 +1,314 @@
+/* 웹폰트 적용 */
+body {
+  font-family: "AppleSDGothicNeo", "Noto Sans KR", sans-serif;
+}
+
+/* reset css */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+div,
+input,
+button,
+textarea,
+form,
+table,
+section {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+/* style */
+/* components */
+.main-btn {
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: white;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: #000000;
+}
+
+section {
+  width: 100vw;
+  padding: 50px 50px 80px 50px;
+  display: flex;
+}
+
+/* detail style */
+.intro {
+  height: fit-content;
+  background: linear-gradient(
+    0deg,
+    rgba(89, 34, 195, 1) 0%,
+    rgba(45, 161, 253, 1) 100%
+  );
+  color: white;
+  justify-content: center;
+  padding-bottom: 0px;
+}
+
+.intro-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro-text {
+  width: 50%;
+}
+
+.intro-text h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.intro-text p {
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.intro-phone {
+  height: 300px;
+}
+
+.intro-phone img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.about {
+  justify-content: center;
+}
+
+.about-wrap {
+  text-align: center;
+}
+
+.about-wrap h4 {
+  margin-bottom: 24px;
+}
+
+.about-wrap p {
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.services {
+  background-color: rgba(89, 34, 195, 1);
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.service-column {
+  display: flex;
+  width: 100%;
+}
+
+.services-title p,
+.portfolio-title p {
+  font-weight: 300;
+  margin-bottom: 2px;
+}
+
+.services-title h4,
+.portfolio-title h4 {
+  margin-bottom: 35px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24px;
+  width: 100%;
+}
+
+.service-item:last-of-type {
+  margin-right: 0px;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.service-icon i {
+  color: rgba(89, 34, 195, 1);
+  font-size: 32px;
+}
+
+.service-item h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.service-item span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.portfolio {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolio-column {
+  display: flex;
+}
+.portfolio-item {
+  width: 50%;
+  position: relative;
+}
+
+.portfolio-item:hover .portfolio-border {
+  border-width: 20px;
+}
+
+.portfolio-item-title {
+  position: absolute;
+  color: white;
+  text-align: left;
+  z-index: 1;
+  margin-top: 48px;
+  margin-left: 56px;
+}
+
+.portfolio-border {
+  position: absolute;
+  border: #ffffff 0px solid;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in;
+}
+
+.portfolio-item-title h4 {
+  margin-bottom: 12px;
+}
+
+.porfolio-img {
+  width: 100%;
+  filter: brightness(0.7);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 50px 80px 50px;
+}
+
+.footer-sns {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.footer-sns a {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(89, 34, 195, 1);
+  border-radius: 100%;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 24px;
+}
+
+.footer-sns a:hover {
+  background-color: rgb(67, 23, 155);
+}
+
+.footer-sns a:last-of-type {
+  margin-right: 0px;
+}
+
+.footer-sns i {
+  font-size: 24px;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+/* 반응형 만들기 */
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro-text {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .service-item {
+    margin-right: 0px;
+    margin-bottom: 32px;
+  }
+  .service-column {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-column {
+    flex-direction: column;
+  }
+  .portfolio-item {
+    width: 100%;
+  }
+}

@@ -1,3 +1,44 @@
+
+/* reset css */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+div,
+input,
+button,
+textarea,
+form,
+table {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* content css */
+
+
 .container {
   width: 800px;
   height: 200px;
@@ -144,4 +185,288 @@
 
 .main-background a:visited {
   text-decoration: none;
+}
+
+
+.main-background a:hover {
+  text-decoration: none;
+  background-color: coral;
+  color: white;
+}
+
+.sub-content {
+  position: relative;
+  width: 80%;
+  max-width: 1024px;
+  background-color: #eee;
+  padding: 30px 40px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+}
+
+/* form */
+
+.form-container {
+  width: 480px;
+  background-color: #eee;
+  padding: 32px 48px;
+}
+
+.form-box {
+  margin-top: 32px;
+}
+
+input[type="email"],
+input[type="text"] {
+  width: 100%;
+  border: #c9c9c9 solid 1px;
+  border-radius: 5px;
+  height: 28px;
+  padding-left: 12px;
+}
+
+textarea {
+  width: 100%;
+  border: #c9c9c9 solid 1px;
+  border-radius: 5px;
+  resize: none;
+  padding-left: 12px;
+}
+
+.first-name-box {
+  float: left;
+  width: 47%;
+  margin-right: 5%;
+}
+
+.last-name-box {
+  float: left;
+  width: 48%;
+}
+
+.form-input-box {
+  clear: both;
+  width: 100%;
+  margin-bottom: 18px;
+  overflow: auto;
+}
+
+.submit-left-box {
+  float: left;
+  width: 80%;
+}
+.submit-right-box {
+  float: left;
+  width: 20%;
+}
+.submit-right-box button {
+  width: 100%;
+  height: 32px;
+  border: none;
+  background-color: gold;
+  border-radius: 5px;
+  color: white;
+}
+
+/* cart */
+.cart-body {
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 100vh;
+}
+
+.cart-background {
+  padding-top: 100px;
+  width: 800px;
+  margin: auto;
+}
+
+.cart-table {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.cart-table tr {
+  border-bottom: cornflowerblue solid 1px;
+}
+
+.cart-table > tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+.cart-table td {
+  padding: 20px 15px;
+}
+
+.cart-table-title {
+  height: 50px;
+}
+
+.cart-product-thumbnail {
+  width: 100px;
+  overflow: hidden;
+}
+
+.cart-product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-product-amount,
+.cart-product-price,
+.cart-product-total {
+  text-align: right;
+}
+
+.cart-product-totalPrice {
+  font-size: 18px;
+  text-align: right;
+}
+
+.cart-bottom-btns {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.cart-edit-cart {
+  font-size: 16px;
+  text-decoration: underline;
+  float: left;
+  color: #555555;
+}
+
+.cart-btn-pay {
+  float: right;
+  padding: 10px 20px;
+  background-color: blue;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-btn-pay:hover {
+  background-color: chocolate;
+}
+
+/* flexbox */
+
+.nav-box {
+  background-color: coral;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu p {
+  padding-left: 20px;
+}
+
+/* 반응형 */
+
+.layout-body {
+  background-color: #c9c9c9;
+}
+.layout-container,
+.layout-contents {
+  display: flex;
+  width: 100%;
+}
+
+.laydout-content {
+  width: 100%;
+  background-color: white;
+  padding: 40px 50px;
+  text-align: center;
+}
+.laydout-content p:last-child {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 14px;
+}
+
+.layout-contents i {
+  background-color: burlywood;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  color: white;
+  padding-top: 30px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+}
+
+/* animation 실습 */
+.product-container {
+  display: flex;
+  background-color: #eee;
+  width: 100%;
+  padding: 40px;
+}
+
+.product-item {
+  width: 33%;
+  margin-right: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.product-item:last-child {
+  margin: 0px;
+}
+
+.product-item-overlay {
+  position: absolute;
+  bottom: -86px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
+  color: white;
+  /* animation */
+  transition: all 0.5s ease-in-out;
+}
+
+.product-item-overlay p:first-child {
+  font-size: 30px;
+}
+
+/* 애니메이션 */
+
+.product-item:hover .product-item-overlay {
+  bottom: 0px;
+}
+
+.product-item img {
+  width: 100%;
+  display: block;
+}
+
+/* layout3 반응형 */
+/* 태블릿 사이즈 */
+@media screen and (max-width: 1200px) {
+  .layout-contents {
+    flex-wrap: wrap;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .layout-contents,
+  .layout-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
 }

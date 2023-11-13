@@ -1,0 +1,239 @@
+@use "reset";
+
+// variables
+// color
+$mainColor: #3627a6;
+$gray: #999999;
+$lightGray: #c5c5c5;
+$bgGray: #eeeeee;
+$darkGray: #333;
+// spacing
+$bold: 32px;
+$semi-bold: 28px;
+$regular: 24px;
+$medium: 18px;
+$light: 12px;
+$thin: 8px;
+$tiny: 4px;
+// style
+$outlineGray: $lightGray 1px solid;
+
+// components
+@mixin dashboardBox($color) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  padding: $regular;
+  border-left: $color 4px solid;
+  border-radius: $tiny;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+  margin-bottom: $regular;
+
+  .info-text p:first-child {
+    margin-bottom: $thin;
+    font-size: $light;
+    font-weight: 400;
+    color: $gray;
+  }
+
+  .info-icon i {
+    font-size: $semi-bold;
+    color: $gray;
+  }
+}
+// 임시 style
+body {
+  background: $bgGray;
+}
+
+.main {
+  // display: flex;
+  .main-contents {
+    width: 100%;
+    padding-left: 40px;
+  }
+}
+
+nav {
+  background-color: $mainColor;
+  height: 100vh;
+  display: flex;
+  color: white;
+  padding: $regular $light;
+  font-weight: 200;
+  margin-left: -78px;
+  transition: all 0.3s ease-in;
+  position: fixed;
+  z-index: 4;
+}
+// animation: test 1s;
+// animation-fill-mode: forwards;
+
+nav:hover {
+  margin-left: 0px;
+  .nav-text {
+    animation: nav-text 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  .nav-icon {
+    animation: nav-icon 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes nav-icon {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-76px);
+  }
+}
+
+@keyframes nav-text {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.nav-text {
+  margin-right: $regular;
+
+  p {
+    margin-bottom: $light;
+  }
+}
+
+.nav-icon {
+  i {
+    display: block;
+    margin-bottom: $light;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.header-wrap {
+  background-color: white;
+  width: 100%;
+  .header-box {
+    padding: $light $regular;
+    max-width: 1320px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+}
+
+.search-wrap {
+  width: 30%;
+  transition: all 1s ease-out;
+}
+
+.search-form {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: $outlineGray;
+  border-radius: $tiny;
+}
+
+.search-form button {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  // style
+  padding: 0px $light;
+  color: white;
+  background-color: $darkGray;
+}
+
+.header-search {
+  transition: all 1s ease-out;
+  width: 100%;
+  // style
+  padding: $thin $light;
+  border: none;
+  outline: none;
+}
+
+.search-wrap:focus-within {
+  width: 40%;
+  .header-search {
+    width: 100%;
+  }
+  .header-search:focus {
+    outline: none;
+  }
+}
+
+.header-menu {
+  color: $gray;
+  text-decoration: none;
+  padding: $light;
+  position: relative;
+  .noti {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: $thin;
+  }
+}
+
+.header-hamburger {
+  padding: $light;
+  border: $outlineGray;
+  border-radius: $tiny;
+  color: $gray;
+}
+
+.dashboard h3 {
+  font-size: $bold;
+  margin: $regular 0px;
+}
+
+.dashboard-info-first {
+  @include dashboardBox(skyblue);
+}
+
+.dashboard-info-second {
+  @include dashboardBox(green);
+}
+
+.dashboard-info-third {
+  @include dashboardBox(purple);
+}
+
+.dashboard-info-fourth {
+  @include dashboardBox(orange);
+}
+
+.dashboard-box {
+  width: 100%;
+  background-color: white;
+  border-radius: $tiny;
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+  margin-bottom: $regular;
+  > p {
+    padding: $light $regular;
+    font-size: $medium;
+    background-color: $bgGray;
+    border-bottom: $outlineGray;
+  }
+  .glaph-content {
+    padding: $light $regular;
+  }
+  .dashboard-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $light $regular;
+    border-bottom: $outlineGray;
+  }
+}
